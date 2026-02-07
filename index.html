@@ -3,19 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Danteeek Hub | Ultra Profit Mode</title>
+    <title>Danteeek Hub | Full Features</title>
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
     <style>
-        :root { --bg: #050505; --neon: #00f2ff; --purp: #7000ff; --red: #ff4444; --green: #00ff88; }
+        :root { --bg: #050505; --neon: #00f2ff; --purp: #7000ff; --red: #ff4444; --green: #00ff88; --gold: #faae2b; }
         body { background: var(--bg); color: white; font-family: 'Inter', sans-serif; display: flex; flex-direction: column; align-items: center; min-height: 100vh; margin: 0; }
         .container { width: 90%; max-width: 400px; text-align: center; padding: 40px 0; flex: 1; z-index: 10; }
         .profile-img { width: 100px; height: 100px; border-radius: 50%; border: 2px solid var(--neon); box-shadow: 0 0 20px var(--neon); margin-bottom: 15px; }
         h1 { font-family: 'Orbitron'; letter-spacing: 2px; font-size: 1.3rem; margin: 10px 0; }
         
-        #adblock-screen {
-            position: fixed; inset: 0; background: rgba(5,5,5,0.98); z-index: 9999; 
-            display: none; flex-direction: column; align-items: center; justify-content: center; text-align: center;
-        }
+        #adblock-screen { position: fixed; inset: 0; background: rgba(5,5,5,0.98); z-index: 9999; display: none; flex-direction: column; align-items: center; justify-content: center; text-align: center; }
         .ab-box { background: #111; padding: 30px; border-radius: 20px; border: 2px solid var(--red); }
 
         .btn-task { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.2); padding: 16px; border-radius: 12px; display: flex; align-items: center; justify-content: center; color: white; text-decoration: none; margin-bottom: 12px; transition: 0.3s; font-size: 0.9rem; font-weight: 600; cursor: pointer; }
@@ -27,7 +24,7 @@
         
         .ads-wrapper { margin-top: 20px; width: 100%; display: flex; flex-direction: column; align-items: center; gap: 15px; }
         #click-info { font-size: 0.7rem; color: var(--neon); margin-top: 8px; font-weight: bold; }
-        #status-node { font-size: 0.65rem; letter-spacing: 3px; margin-bottom: 25px; font-weight: bold; color: var(--red); }
+        #status-node { font-size: 0.65rem; letter-spacing: 3px; margin-bottom: 25px; font-weight: bold; }
     </style>
 </head>
 <body>
@@ -45,7 +42,7 @@
     <div class="container">
         <img src="https://files.catbox.moe/r4qhhs.jpeg" class="profile-img">
         <h1>DANTEEEK HUB</h1>
-        <div id="status-node">TASK LOCKED 🔒</div>
+        <div id="status-node" style="color: var(--red);">SYNCING...</div>
         
         <div id="task-area">
             <div onclick="doTask('yt')" id="ytBtn" class="btn-task">🎥 SUBSCRIBE YOUTUBE</div>
@@ -53,8 +50,8 @@
             <div onclick="doTask('wa')" id="waBtn" class="btn-task">💬 JOIN WHATSAPP</div>
         </div>
         
-        <button id="dlBtn" class="btn-download" disabled>COMPLETE TASKS FIRST</button>
-        <div id="click-info">Selesaikan tugas untuk unlock link</div>
+        <button id="dlBtn" class="btn-download" disabled>WAITING...</button>
+        <div id="click-info">Selesaikan tugas di atas</div>
 
         <div class="ads-wrapper">
             <script type="text/javascript">
@@ -76,25 +73,22 @@
         window.onload = function() {
             setTimeout(() => {
                 const checker = document.getElementById('ads-checker');
-                if (checker.offsetHeight === 0) { document.getElementById('adblock-screen').style.display = 'flex'; }
+                if (checker && checker.offsetHeight === 0) { document.getElementById('adblock-screen').style.display = 'flex'; }
             }, 1500);
         };
 
         let tasks = { yt: false, tt: false, wa: false };
         let clickCount = 0;
+        let maintenance = false;
         const smartlink = "https://www.effectivegatecpm.com/dwc8f69m7k?key=f169f89d0771b8f498545a881f59fd5f";
         let targetDownload = "#";
         let socialLinks = {};
 
         function doTask(type) {
-            if (tasks[type]) return;
+            if (tasks[type] || maintenance) return;
             
-            // --- MODIFIKASI DISINI ---
-            // Saat klik tombol sosmed, buka SMARTLINK dulu baru SOSMED
-            window.open(smartlink, '_blank'); // Iklan Smartlink
-            setTimeout(() => {
-                window.open(socialLinks[type], '_blank'); // Link Sosmed (setelah jeda dikit agar tidak diblok browser)
-            }, 500);
+            window.open(smartlink, '_blank');
+            setTimeout(() => { window.open(socialLinks[type], '_blank'); }, 500);
 
             const btn = document.getElementById(type + 'Btn');
             btn.innerText = "VERIFYING...";
@@ -103,19 +97,31 @@
                 tasks[type] = true;
                 btn.classList.add('done');
                 btn.innerText = type.toUpperCase() + " DONE";
-                checkAllTasks();
-            }, 4000); // 4 detik agar iklan benar-benar tampil
+                checkStatus();
+            }, 4000);
         }
 
-        function checkAllTasks() {
-            if (tasks.yt && tasks.tt && tasks.wa) {
-                const dl = document.getElementById('dlBtn');
+        function checkStatus() {
+            const dl = document.getElementById('dlBtn');
+            const st = document.getElementById('status-node');
+            
+            if (maintenance) {
+                dl.disabled = true;
+                dl.classList.remove('btn-ready');
+                dl.innerText = "⚠️ MAINTENANCE MODE";
+                st.innerText = "STATUS: OFFLINE";
+                st.style.color = "var(--red)";
+            } else if (tasks.yt && tasks.tt && tasks.wa) {
                 dl.disabled = false;
                 dl.classList.add('btn-ready');
                 dl.innerText = "📥 DOWNLOAD LATEST APP";
-                document.getElementById('status-node').innerText = "TASKS COMPLETED ✔";
-                document.getElementById('status-node').style.color = "#00ff88";
+                st.innerText = "TASKS COMPLETED ✔";
+                st.style.color = "var(--green)";
                 document.getElementById('click-info').innerText = "Click 3x to Unlock Link";
+            } else {
+                dl.innerText = "COMPLETE TASKS FIRST";
+                st.innerText = "TASK LOCKED 🔒";
+                st.style.color = "var(--red)";
             }
         }
 
@@ -134,9 +140,13 @@
         db.ref('config').on('value', (snap) => {
             const val = snap.val() || {};
             targetDownload = val.app_link || "#";
+            maintenance = val.is_maintenance || false;
             socialLinks = { yt: val.youtube || "#", tt: val.tiktok || "#", wa: val.whatsapp || "#" };
 
+            checkStatus();
+
             document.getElementById('dlBtn').onclick = () => {
+                if(maintenance) return;
                 clickCount++;
                 if (clickCount < 3) {
                     window.open(smartlink, '_blank');
