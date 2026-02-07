@@ -1,4 +1,116 @@
-<script>
-<!-- code by Hydro -->
-document.write(unescape('%3C%21DOCTYPE%20html%3E%0A%3Chtml%20lang%3D%22id%22%3E%0A%3Chead%3E%0A%20%20%20%20%3Cmeta%20charset%3D%22UTF-8%22%3E%0A%20%20%20%20%3Cmeta%20name%3D%22viewport%22%20content%3D%22width%3Ddevice-width%2C%20initial-scale%3D1.0%22%3E%0A%20%20%20%20%3Ctitle%3EDanteeek%20Hub%20%7C%20Gaming%20Profile%3C/title%3E%0A%20%20%20%20%3Clink%20href%3D%22https%3A//fonts.googleapis.com/css2%3Ffamily%3DOrbitron%3Awght@700%26family%3DInter%3Awght@400%3B600%26display%3Dswap%22%20rel%3D%22stylesheet%22%3E%0A%20%20%20%20%3Cstyle%3E%0A%20%20%20%20%20%20%20%20%3Aroot%20%7B%20--bg%3A%20%23050505%3B%20--neon%3A%20%2300f2ff%3B%20--purp%3A%20%237000ff%3B%20--gold%3A%20%23faae2b%3B%20%7D%0A%20%20%20%20%20%20%20%20body%20%7B%20background%3A%20var%28--bg%29%3B%20color%3A%20white%3B%20font-family%3A%20%27Inter%27%2C%20sans-serif%3B%20display%3A%20flex%3B%20flex-direction%3A%20column%3B%20align-items%3A%20center%3B%20min-height%3A%20100vh%3B%20margin%3A%200%3B%20%7D%0A%20%20%20%20%20%20%20%20.container%20%7B%20width%3A%2090%25%3B%20max-width%3A%20400px%3B%20text-align%3A%20center%3B%20padding%3A%2040px%200%3B%20flex%3A%201%3B%20%7D%0A%20%20%20%20%20%20%20%20.profile-img%20%7B%20width%3A%20100px%3B%20height%3A%20100px%3B%20border-radius%3A%2050%25%3B%20border%3A%202px%20solid%20var%28--neon%29%3B%20box-shadow%3A%200%200%2020px%20var%28--neon%29%3B%20margin-bottom%3A%2015px%3B%20%7D%0A%20%20%20%20%20%20%20%20h1%20%7B%20font-family%3A%20%27Orbitron%27%3B%20letter-spacing%3A%202px%3B%20font-size%3A%201.3rem%3B%20margin%3A%2010px%200%3B%20%7D%0A%20%20%20%20%20%20%20%20%23status-node%20%7B%20font-size%3A%200.65rem%3B%20letter-spacing%3A%203px%3B%20margin-bottom%3A%2025px%3B%20font-weight%3A%20bold%3B%20%7D%0A%20%20%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20.btn%20%7B%20background%3A%20rgba%28255%2C255%2C255%2C0.05%29%3B%20border%3A%201px%20solid%20rgba%28255%2C255%2C255%2C0.1%29%3B%20padding%3A%2016px%3B%20border-radius%3A%2012px%3B%20display%3A%20block%3B%20color%3A%20white%3B%20text-decoration%3A%20none%3B%20margin-bottom%3A%2012px%3B%20transition%3A%200.3s%3B%20font-size%3A%200.9rem%3B%20font-weight%3A%20600%3B%20%7D%0A%20%20%20%20%20%20%20%20.btn%3Ahover%20%7B%20border-color%3A%20var%28--neon%29%3B%20background%3A%20rgba%280%2C%20242%2C%20255%2C%200.05%29%3B%20transform%3A%20translateY%28-3px%29%3B%20%7D%0A%20%20%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20.btn-saweria%20%7B%20%0A%20%20%20%20%20%20%20%20%20%20%20%20background%3A%20rgba%28250%2C%20174%2C%2043%2C%200.1%29%20%21important%3B%20%0A%20%20%20%20%20%20%20%20%20%20%20%20border%3A%201px%20solid%20var%28--gold%29%20%21important%3B%20%0A%20%20%20%20%20%20%20%20%20%20%20%20color%3A%20var%28--gold%29%20%21important%3B%20%0A%20%20%20%20%20%20%20%20%20%20%20%20animation%3A%20pulse-saweria%202s%20infinite%3B%0A%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20@keyframes%20pulse-saweria%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%200%25%20%7B%20box-shadow%3A%200%200%205px%20rgba%28250%2C%20174%2C%2043%2C%200.3%29%3B%20%7D%0A%20%20%20%20%20%20%20%20%20%20%20%2050%25%20%7B%20box-shadow%3A%200%200%2015px%20rgba%28250%2C%20174%2C%2043%2C%200.6%29%3B%20%7D%0A%20%20%20%20%20%20%20%20%20%20%20%20100%25%20%7B%20box-shadow%3A%200%200%205px%20rgba%28250%2C%20174%2C%2043%2C%200.3%29%3B%20%7D%0A%20%20%20%20%20%20%20%20%7D%0A%0A%20%20%20%20%20%20%20%20.btn-download%20%7B%20background%3A%20linear-gradient%2845deg%2C%20var%28--purp%29%2C%20%234800ff%29%3B%20font-family%3A%20%27Orbitron%27%3B%20border%3A%20none%3B%20font-size%3A%200.8rem%3B%20margin-top%3A%2015px%3B%20cursor%3A%20pointer%3B%20box-shadow%3A%200%205px%2020px%20rgba%28112%2C%200%2C%20255%2C%200.4%29%3B%20width%3A%20100%25%3B%20%7D%0A%20%20%20%20%20%20%20%20.btn-download%3Adisabled%20%7B%20background%3A%20%231a1a1a%3B%20border%3A%201px%20solid%20%23333%3B%20color%3A%20%23555%3B%20cursor%3A%20not-allowed%3B%20box-shadow%3A%20none%3B%20%7D%0A%0A%20%20%20%20%20%20%20%20/*%20Area%20Iklan%20-%20Optimasi%20Muncul%20*/%0A%20%20%20%20%20%20%20%20.ads-wrapper%20%7B%20margin-top%3A%2030px%3B%20min-height%3A%2070px%3B%20display%3A%20flex%3B%20justify-content%3A%20center%3B%20align-items%3A%20center%3B%20width%3A%20100%25%3B%20%7D%0A%20%20%20%20%3C/style%3E%0A%3C/head%3E%0A%3Cbody%3E%0A%20%20%20%20%3Cscript%20type%3D%27text/javascript%27%20src%3D%27//pl28670941.effectivegatecpm.com/e0/aa/18/e0aa183a40f8b6c9cbc3486585dae487.js%27%3E%3C/script%3E%0A%0A%20%20%20%20%3Cdiv%20class%3D%22container%22%3E%0A%20%20%20%20%20%20%20%20%3Cimg%20src%3D%22https%3A//files.catbox.moe/r4qhhs.jpeg%22%20class%3D%22profile-img%22%3E%0A%20%20%20%20%20%20%20%20%3Ch1%3EDANTEEEK%20HUB%3C/h1%3E%0A%20%20%20%20%20%20%20%20%3Cdiv%20id%3D%22status-node%22%3ESYNCING...%3C/div%3E%0A%20%20%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20%3Ca%20href%3D%22%23%22%20id%3D%22swLink%22%20class%3D%22btn%20btn-saweria%22%20target%3D%22_blank%22%3E%u2615%20TRAKTIR%20KOPI%20/%20DONASI%3C/a%3E%0A%20%20%20%20%20%20%20%20%3Ca%20href%3D%22%23%22%20id%3D%22ytLink%22%20class%3D%22btn%22%20target%3D%22_blank%22%3E%uD83C%uDFA5%20YOUTUBE%20CHANNEL%3C/a%3E%0A%20%20%20%20%20%20%20%20%3Ca%20href%3D%22%23%22%20id%3D%22ttLink%22%20class%3D%22btn%22%20target%3D%22_blank%22%3E%uD83D%uDCF1%20TIKTOK%20CONTENT%3C/a%3E%0A%20%20%20%20%20%20%20%20%3Ca%20href%3D%22%23%22%20id%3D%22waLink%22%20class%3D%22btn%22%20target%3D%22_blank%22%3E%uD83D%uDCAC%20WHATSAPP%20GROUP%3C/a%3E%0A%20%20%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20%3Cbutton%20id%3D%22dlBtn%22%20class%3D%22btn%20btn-download%22%3E%uD83D%uDCE5%20LOADING...%3C/button%3E%0A%0A%20%20%20%20%20%20%20%20%3Cdiv%20class%3D%22ads-wrapper%22%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3Cscript%20type%3D%22text/javascript%22%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20atOptions%20%3D%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%27key%27%20%3A%20%27f32c9f65838eee3fda760d988567af47%27%2C%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%27format%27%20%3A%20%27iframe%27%2C%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%27height%27%20%3A%2060%2C%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%27width%27%20%3A%20468%2C%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%27params%27%20%3A%20%7B%7D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7D%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%3C/script%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3Cscript%20type%3D%22text/javascript%22%20src%3D%22//www.highperformanceformat.com/f32c9f65838eee3fda760d988567af47/invoke.js%22%3E%3C/script%3E%0A%20%20%20%20%20%20%20%20%3C/div%3E%0A%20%20%20%20%3C/div%3E%0A%0A%20%20%20%20%3Cscript%20src%3D%22https%3A//www.gstatic.com/firebasejs/8.10.0/firebase-app.js%22%3E%3C/script%3E%0A%20%20%20%20%3Cscript%20src%3D%22https%3A//www.gstatic.com/firebasejs/8.10.0/firebase-database.js%22%3E%3C/script%3E%0A%0A%20%20%20%20%3Cscript%3E%0A%20%20%20%20%20%20%20%20const%20firebaseConfig%20%3D%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20apiKey%3A%20%22AIzaSyAxXEcQ-X2W3cWbt-6sYQfVTFG8AYUHNR4%22%2C%0A%20%20%20%20%20%20%20%20%20%20%20%20authDomain%3A%20%22danteeek-db84d.firebaseapp.com%22%2C%0A%20%20%20%20%20%20%20%20%20%20%20%20databaseURL%3A%20%22https%3A//danteeek-db84d-default-rtdb.asia-southeast1.firebasedatabase.app/%22%2C%0A%20%20%20%20%20%20%20%20%20%20%20%20projectId%3A%20%22danteeek-db84d%22%2C%0A%20%20%20%20%20%20%20%20%20%20%20%20storageBucket%3A%20%22danteeek-db84d.firebasestorage.app%22%2C%0A%20%20%20%20%20%20%20%20%20%20%20%20messagingSenderId%3A%20%221056881498323%22%2C%0A%20%20%20%20%20%20%20%20%20%20%20%20appId%3A%20%221%3A1056881498323%3Aweb%3Adebab54682db229a28dc26%22%0A%20%20%20%20%20%20%20%20%7D%3B%0A%20%20%20%20%20%20%20%20firebase.initializeApp%28firebaseConfig%29%3B%0A%20%20%20%20%20%20%20%20const%20db%20%3D%20firebase.database%28%29%3B%0A%0A%20%20%20%20%20%20%20%20db.ref%28%27config%27%29.on%28%27value%27%2C%20%28snap%29%20%3D%3E%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20const%20val%20%3D%20snap.val%28%29%20%7C%7C%20%7B%7D%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20document.getElementById%28%27swLink%27%29.href%20%3D%20val.saweria%20%7C%7C%20%22%23%22%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20document.getElementById%28%27ytLink%27%29.href%20%3D%20val.youtube%20%7C%7C%20%22%23%22%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20document.getElementById%28%27ttLink%27%29.href%20%3D%20val.tiktok%20%7C%7C%20%22%23%22%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20document.getElementById%28%27waLink%27%29.href%20%3D%20val.whatsapp%20%7C%7C%20%22%23%22%3B%0A%0A%20%20%20%20%20%20%20%20%20%20%20%20const%20btn%20%3D%20document.getElementById%28%27dlBtn%27%29%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20const%20st%20%3D%20document.getElementById%28%27status-node%27%29%3B%0A%0A%20%20%20%20%20%20%20%20%20%20%20%20if%20%28val.is_maintenance%29%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20btn.innerText%20%3D%20%22%u26A0%uFE0F%20MAINTENANCE%20MODE%20%28%20UPDATE%20LINK%20%21%21%20MOHON%20TINGGU%20%29%22%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20btn.disabled%20%3D%20true%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20st.innerText%20%3D%20%22STATUS%3A%20OFFLINE%22%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20st.style.color%20%3D%20%22%23ff4444%22%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%7D%20else%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20btn.innerText%20%3D%20%22%uD83D%uDCE5%20DOWNLOAD%20LATEST%20APP%22%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20btn.disabled%20%3D%20false%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20st.innerText%20%3D%20%22STATUS%3A%20ONLINE%22%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20st.style.color%20%3D%20%22%2300ff00%22%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20btn.onclick%20%3D%20%28%29%20%3D%3E%20%7B%20window.location.href%20%3D%20val.app_link%20%7C%7C%20%22%23%22%3B%20%7D%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20%7D%29%3B%0A%20%20%20%20%3C/script%3E%0A%3C/body%3E%0A%3C/html%3E%0A'));
-</script>
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Danteeek Hub | Gaming Profile</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        :root { --bg: #050505; --neon: #00f2ff; --purp: #7000ff; --gold: #faae2b; }
+        body { background: var(--bg); color: white; font-family: 'Inter', sans-serif; display: flex; flex-direction: column; align-items: center; min-height: 100vh; margin: 0; }
+        .container { width: 90%; max-width: 400px; text-align: center; padding: 40px 0; flex: 1; }
+        .profile-img { width: 100px; height: 100px; border-radius: 50%; border: 2px solid var(--neon); box-shadow: 0 0 20px var(--neon); margin-bottom: 15px; }
+        h1 { font-family: 'Orbitron'; letter-spacing: 2px; font-size: 1.3rem; margin: 10px 0; }
+        #status-node { font-size: 0.65rem; letter-spacing: 3px; margin-bottom: 25px; font-weight: bold; }
+        
+        .btn { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); padding: 16px; border-radius: 12px; display: block; color: white; text-decoration: none; margin-bottom: 12px; transition: 0.3s; font-size: 0.9rem; font-weight: 600; }
+        .btn:hover { border-color: var(--neon); background: rgba(0, 242, 255, 0.05); transform: translateY(-3px); }
+        
+        .btn-saweria { 
+            background: rgba(250, 174, 43, 0.1) !important; 
+            border: 1px solid var(--gold) !important; 
+            color: var(--gold) !important; 
+            animation: pulse-saweria 2s infinite;
+        }
+        @keyframes pulse-saweria {
+            0% { box-shadow: 0 0 5px rgba(250, 174, 43, 0.3); }
+            50% { box-shadow: 0 0 15px rgba(250, 174, 43, 0.6); }
+            100% { box-shadow: 0 0 5px rgba(250, 174, 43, 0.3); }
+        }
+
+        .btn-download { background: linear-gradient(45deg, var(--purp), #4800ff); font-family: 'Orbitron'; border: none; font-size: 0.8rem; margin-top: 15px; cursor: pointer; box-shadow: 0 5px 20px rgba(112, 0, 255, 0.4); width: 100%; }
+        .btn-download:disabled { background: #1a1a1a; border: 1px solid #333; color: #555; cursor: not-allowed; box-shadow: none; }
+
+        .ads-wrapper { margin-top: 30px; min-height: 70px; display: flex; justify-content: center; align-items: center; width: 100%; }
+    </style>
+</head>
+<body>
+    <script src="https://pl28671188.effectivegatecpm.com/d3/8c/24/d38c24abbecc956878d56432c5c8761b.js"></script>
+
+    <div class="container">
+        <img src="https://files.catbox.moe/r4qhhs.jpeg" class="profile-img">
+        <h1>DANTEEEK HUB</h1>
+        <div id="status-node">SYNCING...</div>
+        
+        <a href="#" id="swLink" class="btn btn-saweria" target="_blank">☕ TRAKTIR KOPI / DONASI</a>
+        <a href="#" id="ytLink" class="btn" target="_blank">🎥 YOUTUBE CHANNEL</a>
+        <a href="#" id="ttLink" class="btn" target="_blank">📱 TIKTOK CONTENT</a>
+        <a href="#" id="waLink" class="btn" target="_blank">💬 WHATSAPP GROUP</a>
+        
+        <button id="dlBtn" class="btn btn-download">📥 LOADING...</button>
+
+        <div class="ads-wrapper">
+            <script type="text/javascript">
+                atOptions = {
+                    'key' : '62940ba000dc10bd470228c661e6c8a0',
+                    'format' : 'iframe',
+                    'height' : 60,
+                    'width' : 468,
+                    'params' : {}
+                };
+            </script>
+            <script src="https://www.highperformanceformat.com/62940ba000dc10bd470228c661e6c8a0/invoke.js"></script>
+        </div>
+    </div>
+
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
+
+    <script>
+        const firebaseConfig = {
+            apiKey: "AIzaSyAxXEcQ-X2W3cWbt-6sYQfVTFG8AYUHNR4",
+            authDomain: "danteeek-db84d.firebaseapp.com",
+            databaseURL: "https://danteeek-db84d-default-rtdb.asia-southeast1.firebasedatabase.app/",
+            projectId: "danteeek-db84d",
+            storageBucket: "danteeek-db84d.firebasestorage.app",
+            messagingSenderId: "1056881498323",
+            appId: "1:1056881498323:web:debab54682db229a28dc26"
+        };
+        firebase.initializeApp(firebaseConfig);
+        const db = firebase.database();
+
+        // Variabel Direct Link dari Kamu
+        const adsterraDirectLink = "https://www.effectivegatecpm.com/dwc8f69m7k?key=f169f89d0771b8f498545a881f59fd5f";
+
+        db.ref('config').on('value', (snap) => {
+            const val = snap.val() || {};
+            document.getElementById('swLink').href = val.saweria || "#";
+            document.getElementById('ytLink').href = val.youtube || "#";
+            document.getElementById('ttLink').href = val.tiktok || "#";
+            document.getElementById('waLink').href = val.whatsapp || "#";
+
+            const btn = document.getElementById('dlBtn');
+            const st = document.getElementById('status-node');
+
+            if (val.is_maintenance) {
+                btn.innerText = "⚠️ MAINTENANCE MODE ( UPDATE LINK !! MOHON TUNGGU )";
+                btn.disabled = true;
+                st.innerText = "STATUS: OFFLINE";
+                st.style.color = "#ff4444";
+            } else {
+                btn.innerText = "📥 DOWNLOAD LATEST APP";
+                btn.disabled = false;
+                st.innerText = "STATUS: ONLINE";
+                st.style.color = "#00ff00";
+                
+                btn.onclick = () => {
+                    // Teknik Cuan: Buka Direct Link di tab baru
+                    window.open(adsterraDirectLink, '_blank');
+                    // Arahkan halaman utama ke link download asli
+                    window.location.href = val.app_link || "#";
+                };
+            }
+        });
+    </script>
+</body>
+</html>
